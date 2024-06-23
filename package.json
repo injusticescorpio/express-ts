@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",
+    "prestart": "npm run build",
+    "start": "node dist/index.js",
+    "dev": "nodemon",
+    "clean-dist": "rm -rf ./dist",
+    "build": "npm run clean-dist && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
